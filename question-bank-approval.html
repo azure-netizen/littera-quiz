@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Question Bank Approval Wireframe</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">Wireframe</p>
+      <h1>Question Bank and Approval Workflow</h1>
+    </div>
+    <nav class="role-tabs" aria-label="Question bank wireframe sections">
+      <a href="#submit">Submit</a>
+      <a href="#bulk">Bulk Upload</a>
+      <a href="#approval">Approval</a>
+      <a href="#bank">Question Bank</a>
+      <a href="index.html">Platform</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="submit" class="screen">
+      <div class="screen-heading">
+        <p class="eyebrow">Teacher contribution</p>
+        <h2>Question Submission</h2>
+      </div>
+      <div class="step-flow question-flow" aria-label="Question approval steps">
+        <div class="step active"><span>1</span>Compose</div>
+        <div class="step"><span>2</span>Validate</div>
+        <div class="step"><span>3</span>Queue</div>
+        <div class="step"><span>4</span>Review</div>
+        <div class="step"><span>5</span>Publish</div>
+      </div>
+      <div class="grid two">
+        <article class="panel">
+          <div class="panel-title">Create Question</div>
+          <div class="segmented question-type-tabs" role="tablist" aria-label="Question type">
+            <button class="active" type="button" data-question-type="mcq">MCQ</button>
+            <button type="button" data-question-type="fill">Fill Blank</button>
+            <button type="button" data-question-type="match">Match</button>
+            <button type="button" data-question-type="media">Media</button>
+          </div>
+          <div class="form-grid">
+            <div>
+              <label>Category</label>
+              <div class="lookup-row"><div class="input filled">Mathematics</div><button>Thumb</button></div>
+            </div>
+            <div>
+              <label>Sub category</label>
+              <div class="lookup-row"><div class="input filled">Fractions</div><button>Thumb</button></div>
+            </div>
+          </div>
+          <label>Difficulty</label>
+          <div class="segmented">
+            <button>Easy</button>
+            <button>Medium</button>
+            <button>Hard</button>
+          </div>
+          <label>Question text</label>
+          <div class="textarea"></div>
+          <div class="media-question-field" hidden>
+            <label>Media attachment</label>
+            <div class="media-drop">Image / Audio / Video upload</div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title">Answer Data: <span id="answerTitle">MCQ</span></div>
+          <div class="answer-panel active" data-answer-panel="mcq">
+            <div class="answer-options">
+              <div><span>A</span><div class="input"></div></div>
+              <div><span>B</span><div class="input"></div></div>
+              <div><span>C</span><div class="input"></div></div>
+              <div><span>D</span><div class="input"></div></div>
+            </div>
+            <label>Correct answer</label>
+            <div class="segmented">
+              <button>A</button>
+              <button>B</button>
+              <button>C</button>
+              <button>D</button>
+            </div>
+          </div>
+          <div class="answer-panel" data-answer-panel="fill">
+            <label>Question with blank</label>
+            <div class="textarea compact">The capital of India is ______.</div>
+            <label>Accepted answer</label>
+            <div class="input"></div>
+            <label>Alternate accepted answers</label>
+            <div class="input"></div>
+          </div>
+          <div class="answer-panel" data-answer-panel="match">
+            <div class="match-pairs">
+              <div><label>Left A</label><div class="input"></div><label>Right A</label><div class="input"></div></div>
+              <div><label>Left B</label><div class="input"></div><label>Right B</label><div class="input"></div></div>
+              <div><label>Left C</label><div class="input"></div><label>Right C</label><div class="input"></div></div>
+              <div><label>Left D</label><div class="input"></div><label>Right D</label><div class="input"></div></div>
+            </div>
+            <div class="status-strip">Correct answer is stored as left-to-right pair mapping</div>
+          </div>
+          <div class="answer-panel" data-answer-panel="media">
+            <label>Media type</label>
+            <div class="segmented">
+              <button>Image</button>
+              <button>Audio</button>
+              <button>Video</button>
+            </div>
+            <label>Answer format</label>
+            <div class="segmented">
+              <button>MCQ</button>
+              <button>Text Answer</button>
+            </div>
+            <label>Correct answer</label>
+            <div class="input"></div>
+            <div class="status-strip">Media questions require an uploaded file before submission</div>
+          </div>
+          <div class="actions">
+            <button>Save Draft</button>
+            <button class="primary">Submit for Approval</button>
+          </div>
+          <div class="status-strip">Submitted questions enter admin approval before quiz use</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="bulk" class="screen">
+      <div class="screen-heading">
+        <p class="eyebrow">Teacher and admin import</p>
+        <h2>Bulk Question Upload</h2>
+      </div>
+      <div class="grid three">
+        <article class="panel">
+          <div class="panel-title">Upload File</div>
+          <div class="upload-box">
+            <strong>CSV / XLSX</strong>
+            <span>Drag file here or choose from device</span>
+          </div>
+          <div class="list upload-order">
+            <div>Type</div>
+            <div>Question</div>
+            <div>Category, Sub Category</div>
+            <div>Difficulty</div>
+            <div>Options, Correct Answer</div>
+            <div>Media URL</div>
+          </div>
+          <button class="primary">Validate File</button>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title">Validation Preview</div>
+          <div class="metric-row stacked">
+            <div><strong>240</strong><span>Total rows</span></div>
+            <div><strong>228</strong><span>Valid rows</span></div>
+            <div><strong>12</strong><span>Rows with errors</span></div>
+          </div>
+          <div class="status-strip warning">Errors: missing category, invalid answer, unsupported media</div>
+          <button>Download Error Report</button>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title">Queue Submission</div>
+          <div class="queue-box">
+            <strong>Approval queue target</strong>
+            <span>Valid rows become pending questions</span>
+          </div>
+          <div class="review-card">
+            <b>Auto approval</b>
+            <span>Off by default for teacher uploads</span>
+          </div>
+          <button class="primary">Send Valid Rows to Queue</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="approval" class="screen">
+      <div class="screen-heading">
+        <p class="eyebrow">Admin workflow</p>
+        <h2>Approval Queue and Review Detail</h2>
+      </div>
+      <div class="grid two">
+        <article class="panel">
+          <div class="panel-title">Pending Queue</div>
+          <div class="segmented">
+            <button>Type</button>
+            <button>Category</button>
+            <button>Sub Category</button>
+            <button>Difficulty</button>
+            <button>Teacher</button>
+          </div>
+          <table>
+            <thead><tr><th>Question</th><th>Teacher</th><th>Type</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr class="review-row active" data-review-type="mcq" data-title="Fractions MCQ" data-teacher="Ms. Patel" data-category="Mathematics / Fractions" data-difficulty="Medium" data-preview="Which fraction is equivalent to 1/2?" data-validation="MCQ has four options and one correct answer selected." data-media="Category thumbnail">
+                <td>Fractions MCQ</td><td>Ms. Patel</td><td>MCQ</td><td>Pending</td>
+              </tr>
+              <tr class="review-row" data-review-type="media" data-title="Audio spelling" data-teacher="Mr. Khan" data-category="English / Listening" data-difficulty="Easy" data-preview="Listen to the audio and choose the correctly spelled word." data-validation="Audio file is attached and answer format is set to MCQ." data-media="Audio preview">
+                <td>Audio spelling</td><td>Mr. Khan</td><td>Media</td><td>Pending</td>
+              </tr>
+              <tr class="review-row" data-review-type="match" data-title="Match capitals" data-teacher="Ms. Das" data-category="Social Science / Capitals" data-difficulty="Medium" data-preview="Match each state with its capital city." data-validation="All left-side items have one matching right-side answer." data-media="Category thumbnail">
+                <td>Match capitals</td><td>Ms. Das</td><td>Match</td><td>Pending</td>
+              </tr>
+              <tr class="review-row" data-review-type="fill" data-title="Number sequence" data-teacher="Mr. Roy" data-category="Mathematics / Sequences" data-difficulty="Easy" data-preview="2, 4, 6, __, 10" data-validation="Blank answer has accepted value and alternate answer rules." data-media="Category thumbnail">
+                <td>Number sequence</td><td>Mr. Roy</td><td>Fill</td><td>Pending</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title">Review Question: <span id="reviewType">MCQ</span></div>
+          <div class="question-preview">
+            <div class="thumbnail-box" id="reviewMedia">Category thumbnail</div>
+            <div>
+              <strong id="reviewTitle">Fractions MCQ</strong>
+              <span id="reviewMeta">Category: Mathematics / Fractions</span>
+              <span id="reviewDifficulty">Difficulty: Medium</span>
+              <span id="reviewTeacher">Submitted by: Ms. Patel</span>
+            </div>
+          </div>
+          <label>Question preview</label>
+          <div class="review-detail-card" id="reviewPreview">Which fraction is equivalent to 1/2?</div>
+          <div class="review-detail-panel active" data-review-panel="mcq">
+            <label>MCQ options</label>
+            <div class="answer-options compact-options">
+              <div><span>A</span><div class="input filled">1/4</div></div>
+              <div><span>B</span><div class="input filled">2/4</div></div>
+              <div><span>C</span><div class="input filled">3/4</div></div>
+              <div><span>D</span><div class="input filled">4/4</div></div>
+            </div>
+          </div>
+          <div class="review-detail-panel" data-review-panel="media">
+            <label>Media attachment</label>
+            <div class="media-drop">Audio file preview and transcript check</div>
+          </div>
+          <div class="review-detail-panel" data-review-panel="match">
+            <label>Match pairs</label>
+            <div class="match-pairs compact-match">
+              <div><label>Gujarat</label><div class="input filled">Gandhinagar</div><label>Bihar</label><div class="input filled">Patna</div></div>
+              <div><label>Odisha</label><div class="input filled">Bhubaneswar</div><label>Assam</label><div class="input filled">Dispur</div></div>
+            </div>
+          </div>
+          <div class="review-detail-panel" data-review-panel="fill">
+            <label>Accepted answers</label>
+            <div class="input filled">8</div>
+            <label>Alternate accepted answers</label>
+            <div class="input filled">eight</div>
+          </div>
+          <label>Answer validation</label>
+          <div class="input filled" id="reviewValidation">MCQ has four options and one correct answer selected.</div>
+          <label>Rejection reason</label>
+          <div class="textarea compact"></div>
+          <div class="actions">
+            <button>Reject</button>
+            <button class="primary">Approve</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="bank" class="screen">
+      <div class="screen-heading">
+        <p class="eyebrow">Quiz-ready content</p>
+        <h2>Approved Question Bank</h2>
+      </div>
+      <div class="grid three">
+        <article class="panel">
+          <div class="panel-title">Search and Filters</div>
+          <label>Search question</label>
+          <div class="input"></div>
+          <div class="segmented">
+            <button>MCQ</button>
+            <button>Fill</button>
+            <button>Match</button>
+            <button>Media</button>
+          </div>
+          <div class="segmented">
+            <button>Easy</button>
+            <button>Medium</button>
+            <button>Hard</button>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title">Approved Questions</div>
+          <div class="list">
+            <div>MCQ: Equivalent fractions</div>
+            <div>Media: Listen and spell</div>
+            <div>Match: State and capital</div>
+            <div>Fill blank: Number sequence</div>
+          </div>
+          <div class="status-strip">Only approved questions are available for gameplay</div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title">Teacher Contribution</div>
+          <div class="metric-row stacked">
+            <div><strong>42</strong><span>Submitted</span></div>
+            <div><strong>38</strong><span>Approved</span></div>
+            <div><strong>4</strong><span>Rejected</span></div>
+          </div>
+          <div class="formula">Leaderboard score uses approved question count</div>
+        </article>
+      </div>
+    </section>
+  </main>
+  <script>
+    const typeLabels = {
+      mcq: "MCQ",
+      fill: "Fill Blank",
+      match: "Match",
+      media: "Media"
+    };
+
+    const typeButtons = document.querySelectorAll("[data-question-type]");
+    const answerPanels = document.querySelectorAll("[data-answer-panel]");
+    const answerTitle = document.getElementById("answerTitle");
+    const mediaQuestionField = document.querySelector(".media-question-field");
+    const reviewRows = document.querySelectorAll("[data-review-type]");
+    const reviewPanels = document.querySelectorAll("[data-review-panel]");
+    const reviewType = document.getElementById("reviewType");
+    const reviewMedia = document.getElementById("reviewMedia");
+    const reviewTitle = document.getElementById("reviewTitle");
+    const reviewMeta = document.getElementById("reviewMeta");
+    const reviewDifficulty = document.getElementById("reviewDifficulty");
+    const reviewTeacher = document.getElementById("reviewTeacher");
+    const reviewPreview = document.getElementById("reviewPreview");
+    const reviewValidation = document.getElementById("reviewValidation");
+
+    typeButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const selectedType = button.dataset.questionType;
+
+        typeButtons.forEach((item) => item.classList.toggle("active", item === button));
+        answerPanels.forEach((panel) => {
+          panel.classList.toggle("active", panel.dataset.answerPanel === selectedType);
+        });
+
+        answerTitle.textContent = typeLabels[selectedType];
+        mediaQuestionField.hidden = selectedType !== "media";
+      });
+    });
+
+    reviewRows.forEach((row) => {
+      row.addEventListener("click", () => {
+        const selectedType = row.dataset.reviewType;
+
+        reviewRows.forEach((item) => item.classList.toggle("active", item === row));
+        reviewPanels.forEach((panel) => {
+          panel.classList.toggle("active", panel.dataset.reviewPanel === selectedType);
+        });
+
+        reviewType.textContent = typeLabels[selectedType];
+        reviewMedia.textContent = row.dataset.media;
+        reviewTitle.textContent = row.dataset.title;
+        reviewMeta.textContent = `Category: ${row.dataset.category}`;
+        reviewDifficulty.textContent = `Difficulty: ${row.dataset.difficulty}`;
+        reviewTeacher.textContent = `Submitted by: ${row.dataset.teacher}`;
+        reviewPreview.textContent = row.dataset.preview;
+        reviewValidation.textContent = row.dataset.validation;
+      });
+    });
+  </script>
+</body>
+</html>

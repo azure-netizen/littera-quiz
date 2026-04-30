@@ -22,6 +22,7 @@ This folder breaks the quiz platform scope into separate feature requirement doc
 16. [Mobile App](./16-mobile-app.md)
 17. [Admin Control Center](./17-admin-control-center.md)
 18. [Scalability and Technical Architecture](./18-scalability-architecture.md)
+19. [School Master Data Bulk Upload](./19-school-master-data-bulk-upload.md)
 
 ## Shared Platform Goals
 
@@ -31,4 +32,3 @@ This folder breaks the quiz platform scope into separate feature requirement doc
 - Encourage teacher participation through contribution and ranking.
 - Support low-network rural environments.
 - Maintain fair play through proctoring and violation tracking.
-
