@@ -97,6 +97,9 @@ Allow students, teachers, and admins to securely access the platform with role-b
 
 ### Step 5: Access Confirmation Screen
 
+- Access request will be confirmed by Admin or Super Admin only.
+- Based on school code, village-level mapping is automatically applied.
+
 ```text
 +--------------------------------------------------+
 | Profile Complete                                 |

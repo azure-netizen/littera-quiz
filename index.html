@@ -14,6 +14,7 @@
     </div>
     <nav class="role-tabs" aria-label="Wireframe sections">
       <a href="#onboarding">Onboarding</a>
+      <a href="question-bank-approval.html">Question Bank</a>
       <a href="#student">Student</a>
       <a href="#teacher">Teacher</a>
       <a href="#admin">Admin</a>
@@ -334,6 +335,31 @@
             <div>Quiz completion rate</div>
             <div>Teacher participation KPI</div>
           </div>
+        </article>
+        <article class="panel">
+          <div class="panel-title">School Master Upload</div>
+          <div class="segmented">
+            <button>State</button>
+            <button>District</button>
+            <button>Block</button>
+            <button>CRC</button>
+            <button>Village</button>
+            <button>School</button>
+          </div>
+          <div class="upload-box">
+            <strong>Upload CSV / XLSX</strong>
+            <span>Validate parent codes before import</span>
+          </div>
+          <div class="list upload-order">
+            <div><b>State</b> Name, Code</div>
+            <div><b>District</b> Name, Code, State Code</div>
+            <div><b>Block</b> Name, Code, State Code, District Code</div>
+            <div><b>CRC</b> Name, Code, State Code, District Code, Block Code</div>
+            <div><b>Village</b> Name, Code, State Code, District Code, Block Code, CRC Code</div>
+            <div><b>School</b> Name, Code, State Code, District Code, Block Code, CRC Code, Village Code</div>
+          </div>
+          <div class="status-strip">Preview: valid records, duplicates, missing fields, parent-code errors</div>
+          <button class="primary">Confirm Import</button>
         </article>
       </div>
     </section>
