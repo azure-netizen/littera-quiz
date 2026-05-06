@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Give admins operational control over questions, competitions, leaderboards, analytics, announcements, violations, and system configuration.
+Give admins operational control over questions, competitions, access control, leaderboards, analytics, announcements, violations, and system configuration.
 
 ## Users
 
@@ -10,6 +10,7 @@ Give admins operational control over questions, competitions, leaderboards, anal
 
 ## Functional Requirements
 
+- Admins shall assign access role.
 - Admins shall approve or reject submitted questions.
 - Admins shall monitor student leaderboards.
 - Admins shall monitor teacher leaderboards.

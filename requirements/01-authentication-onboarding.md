@@ -97,7 +97,9 @@ Allow students, teachers, and admins to securely access the platform with role-b
 
 ### Step 5: Access Confirmation Screen
 
-- Access request will be confirmed by Admin or Super Admin only.
+- Access request will be confirmed by Admin or Super Admin only. Access  will be based on access role  village, crc,block,district,state
+village role will allow access to 
+
 - Based on school code, village-level mapping is automatically applied.
 
 ```text
@@ -114,6 +116,7 @@ Allow students, teachers, and admins to securely access the platform with role-b
 - Student can now join eligible quiz slots.
 - Teacher-enrolled students are linked to the teacher account.
 - Regional mapping becomes available for reporting and leaderboard logic.
+-Teacher may have two role 1. teacher 2. admin . To participate in quiz  teacher role is must.
 
 ## Functional Requirements
 
