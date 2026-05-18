@@ -13,9 +13,9 @@ Define technical expectations for cloud hosting, scalability, real-time performa
 
 - The platform shall support web application access.
 - The platform shall support Android and iOS app access through Capacitor.
-- Frontend shall use React or Next.js.
-- Backend shall use Node.js or .NET Core.
-- Database shall use Cloud SQL or an equivalent managed relational database.
+- Frontend shall use React .
+- Backend shall use .NET Core.
+- Database shall use Cloud SQL PostgreSQL.
 - Real-time features shall use Firebase or WebSockets.
 - File and media storage shall use Google Cloud Storage or equivalent.
 - Notifications shall use Firebase Cloud Messaging.
