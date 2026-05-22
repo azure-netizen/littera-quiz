@@ -141,6 +141,62 @@ main {
   background: var(--panel);
 }
 
+.panel-compact {
+  padding: 10px;
+}
+
+.panel-body {
+  padding-top: 8px;
+}
+
+/* Live monitoring full-width three cards */
+.live-monitoring {
+  width: 100%;
+}
+
+.lm-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.lm-card {
+  padding: 14px;
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lm-value {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.lm-label {
+  font-size: 13px;
+  opacity: 0.92;
+}
+
+.lm-players {
+  background: linear-gradient(90deg, #06b6d4, #0ea5a4);
+}
+
+.lm-slots {
+  background: linear-gradient(90deg, #f59e0b, #f97316);
+}
+
+.lm-violations {
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+}
+
+@media (max-width: 900px) {
+  .lm-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
 .panel-title {
   margin-bottom: 14px;
   padding-bottom: 10px;
